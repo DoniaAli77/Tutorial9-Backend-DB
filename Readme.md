@@ -30,3 +30,4 @@ Note that you need to use same password that you used during installing postgres
 
 Also click on visual studio code extensions then search for thunder client then install it to test your backend
 (clicking ctrl + c to stop runnning server code exit by clicking)
+16. to install what node modules (dependinces in package.js) write **npm i** in the terminal
