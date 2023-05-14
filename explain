@@ -1,0 +1,125 @@
+`Node.js` is an **open-source**, **cross-platform**, **JavaScript runtime environment** that executes JavaScript code outside of a web browser¹. It is used by many big companies like Netflix and Uber¹. Node.js is a popular choice for building the back-end of web applications because it works great for data-intensive applications, like streaming and real-time apps¹.
+
+It is built on the Google Chrome V8 JavaScript runtime engine and has a node package manager (npm) with a library of over 350,000 packages to help get your project or application off the ground with efficiency and ease. Node.js uses an event-driven, single-threaded I/O model and relies on user interactions or events to run. In most cases, code is run synchronously. Server requests and other such asynchronous tasks rely on a system of promises or async/await functions to handle these inputs and outputs.
+
+(1) What is Node.js? A beginner's introduction to JavaScript runtime. https://www.educative.io/blog/what-is-nodejs.
+(2) Node.js Introduction - W3Schools. https://www.w3schools.com/nodejs/nodejs_intro.asp.
+
+**--------------------------------------------------------**
+
+`npm` (short for Node Package Manager) is the default package manager for the JavaScript runtime environment Node.js. It is used to install and manage packages (collections of code that you can use in your projects) from the npm registry.
+
+npm provides a command-line interface (CLI) that you can use to install, update, and manage packages for your Node.js projects. For example, you can use the `npm install` command to install a package from the npm registry, or the `npm update` command to update an installed package to the latest version.
+
+In addition to managing packages, npm also provides other features such as the ability to run scripts and manage project dependencies through the `package.json` file.
+
+**--------------------------------------------------------**
+
+`Express.js` is a **minimal and flexible Node.js web application framework** that provides a robust set of features for web and mobile applications². It simplifies the APIs of Node.js web server functionality and adds helpful new features³. With a myriad of HTTP utility methods and middleware at your disposal, creating a robust API is quick and easy².
+
+Express.js has many features that make it a popular choice for building web applications. Some of these features include:
+- **Middleware**: Express.js uses middleware functions to handle requests and responses. Middleware functions have access to the request and response objects, as well as the next middleware function in the application's request-response cycle.
+- **Routing**: Express.js provides a robust routing system that allows you to define routes for your application. Routes can be defined using different HTTP methods (GET, POST, PUT, DELETE, etc.) and can include parameters and query strings.
+- **Template Engines**: Express.js supports many template engines that allow you to create dynamic HTML pages. You can use template engines like Pug, EJS, and Handlebars to generate HTML on the server-side.
+- **Error Handling**: Express.js provides built-in error handling mechanisms that make it easy to handle errors in your application.
+
+(1) Express - Node.js web application framework. http://expressjs.com/.
+(2) Express.js - GeeksforGeeks. https://www.geeksforgeeks.org/express-js/.
+(3) Express/Node introduction - Learn web development | MDN. https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction.
+
+**--------------------------------------------------------**
+
+`Knex` is a **SQL query builder** mainly used for Node.js applications with built-in model schema creation, table migrations, connection pooling, and seeding¹. It supports various databases like PostgreSQL, MySQL, SQLite, Oracle, and some others as well⁵. It provides both callbacks and promise interface⁵.
+
+(1) A closer look at Knex.js - Medium. https://dltlabs.medium.com/a-closer-look-at-knex-js-672ee777edfd.
+(2) SQL Query Builder for Javascript | Knex.js. https://knexjs.org/.
+(3) Installation | Knex.js. https://knexjs.org/guide/.
+
+**--------------------------------------------------------**
+
+`The request/response cycle` traces how a user’s request flows through an application¹. It starts when a user opens their browser, types in a URL, and presses Enter. When a user presses Enter, the browser makes a request for that URL. The request hits the server-side of the application, which processes the request and sends back a response. The response is then displayed to the user in their browser².
+
+
+(1) Request-Response Cycle I | Codecademy. https://bing.com/search?q=what+is+the+request+response+cycle.
+(2) Request-Response Cycle I | Codecademy. https://www.codecademy.com/article/request-response-cycle-static.
+(3) How the Web Works, HTTP Request/Response Cycle - Turing. https://backend.turing.edu/module2/lessons/how_the_web_works_http.
+(4) All about Request — Response cycle and how Go works with it.. https://archit2693-aj.medium.com/all-about-request-response-cycle-and-how-go-works-with-it-35796792fe9b.
+(5) Request/response cycle | LoopBack Documentation. https://loopback.io/doc/en/lb4/Request-response-cycle.html.
+
+**--------------------------------------------------------**
+
+`Routing` in Express.js refers to how application endpoints (URI) respond to client requests¹. In Express.js, routing is defined as an Express object app corresponding to various HTTP methods such as `app.get()` to respond to GET requests and `app.post()` to respond to POST requests¹.
+
+so, it works by defining routes that associate an HTTP verb (GET, POST, PUT, DELETE, etc.), a URL path/pattern, and a function that is called to handle that pattern. When a request is made to the server, Express.js checks the request's HTTP method and URL path against the defined routes. If a matching route is found, the associated function is called to handle the request.
+
+For example, you could define a route to handle GET requests to the `/users` endpoint like this:
+```javascript
+app.get('/users', function (req, res) {
+  // Handle the request here
+});
+```
+In this example, when a GET request is made to the `/users` endpoint, the function provided as the second argument to `app.get()` will be called to handle the request.
+
+
+(1) Routing in Express.js - Topcoder. https://www.topcoder.com/thrive/articles/routing-in-express-js.
+(2) Express routing. https://expressjs.com/en/guide/routing.html.
+(3) Express Tutorial Part 4: Routes and controllers - MDN Web Docs. https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes.
+(4) Routing Path for ExpressJS - GeeksforGeeks. https://www.geeksforgeeks.org/routing-path-for-expressjs/.
+(5) Express.js Routing - javaTpoint. https://www.javatpoint.com/expressjs-routing.
+
+**--------------------------------------------------------**
+
+`An endpoint` refers to a specific location or URL that is used to access a resource on a server. In the context of web development and APIs, an endpoint is the URL that is used to make a request to a server in order to retrieve or manipulate data.
+
+For example, in a RESTful API, you might have an endpoint like `/users` that allows you to retrieve a list of all users. You could then make a GET request to this endpoint to retrieve the data.
+
+**--------------------------------------------------------**
+
+
+`app.listen()` is a method in Express.js that is used to bind and listen for connections on the specified host and port. It is a convenience method that wraps the `http.createServer()` method from Node.js and starts the server listening for incoming requests.
+
+Here's an example of how you might use `app.listen()` to start an Express.js server:
+```javascript
+const express = require('express');
+const app = express();
+
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!');
+});
+```
+In this example, the server is started and begins listening for incoming requests on port 3000. When the server is ready, the callback function provided as the second argument to `app.listen()` is called.
+
+**--------------------------------------------------------**
+
+`package.json` is a file used by Node.js projects to manage dependencies and provide metadata about the project. It is located in the root directory of a Node.js project and contains information such as the project's name, version, description, and dependencies.
+
+The `dependencies` field in `package.json` lists the packages that your project depends on, along with their version numbers. When you run `npm install`, npm reads this field and installs the specified packages and their dependencies.
+
+Here's an example of a simple `package.json` file:
+```json
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "description": "A simple Node.js project",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
+```
+In this example, the `package.json` file specifies that the project depends on the `express` package, version `4.17.1` or higher.
+
+
+`package.json` is a file that is typically created when you initialize a new Node.js project using the `npm init` command. This command prompts you for information about your project, such as its name and version, and uses this information to create a `package.json` file in the root directory of your project.
+
+You can also create a `package.json` file manually by creating a new file in the root directory of your project and adding the necessary fields. The file must be a valid JSON file and must contain at least the `name` and `version` fields.
+
+Here's an example of how you might create a simple `package.json` file manually:
+```json
+{
+  "name": "my-project",
+  "version": "1.0.0"
+}
+```
+In this example, we've created a `package.json` file with the `name` and `version` fields. You can add additional fields as needed to provide more information about your project.
+
